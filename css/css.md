@@ -42,7 +42,7 @@
     点击  :active
     点击之后    :visited
     
-    4.盒子模型
+#### 4.盒子模型
     边框 border:2px solid red;
     border-top  border-bottom   border-left border-right
     
@@ -53,7 +53,7 @@
     margin-top margin-bottom  margin-left margin-right
 
 
-    5.布局漂浮
+#### 5.布局漂浮
     float   left：后面的div到右边   right：后面的div到左边
     #aa {
     float: left;
@@ -61,7 +61,7 @@
     }
     
     
-    6.布局定位（漂浮）
+#### 6.布局定位（漂浮）
     position
     absolute   从文档流中拖出
     relative   不会从文档流中拖出
