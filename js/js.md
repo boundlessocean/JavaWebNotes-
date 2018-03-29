@@ -145,25 +145,78 @@
      setTimeout()
      opener 获取打开这个window的对象
         
-## dom 文档对象模型
+## 三 dom 文档对象模型
         
 ####  组成：
+    <p id="idName"> 哈哈哈哈 </p>
     1.document 整个html文档
+    2.element 标签属性
+    3.文本对象
+    
+#### 1.document 整个html文档（用于添加节点）
+    获取节点
     document.getElementById();
     document.getElementsByClassName();
     document.getElementsByName();
     document.getElementsByTagName();
     
-    2.element 标签对象
-    3.属性对象
-    4.文本对象
-    5.Node节点对象 是以上对象的父对象
+    插入节点
+    document.insertBefore()
+    
+    删除节点
+    document.removeChild()
+    
+    替换节点
+    document.replaceChild()
+    
+    创建节点
+    var li = document.createElement("li");
+    var text = document.createTextNode("name");
+    
+    添加节点
+    li.appendChild(text);
+    
+    位置节点
+    li.firstChild
+    li.lastChild
+    li.childNodes 获取所以子节点，兼容性差，使用document.getElementsByTagName()获取
+    li.parentNode
+    li.nextSibling  指向后面一个兄弟节点
+    li.previousSibling  指向前面一个兄弟节点
+    
+    
+    
+#### 2.element 标签对象(用于设置标签的属性id、class、name等)
+    获取标签属性
+    li.getAttribute("id")
+    
+    设置标签属性
+    li.setAttribute("id","100")
+
+    移除标签属性
+    li.removeAttribute("id")
+
+#### 3.文本对象
+    获取标签
+        var p = document.getElementById("idName");
+        document.write(p.nodeName);
+        document.write(p.nodeValue);
+        
+    获取属性
+        var id = p.getAttributeNode("id");
+        document.write(id.nodeName);
+        document.write(id.nodeValue);
+    
+    获取子节点
+        var text = p.firstChild;
+        document.write(text.nodeName);
+        document.write(text.nodeValue);
         
         
-        
-        
-        
-        
+#### 四 innerHTML
+    var p = document.getElementById("idName");
+    p.innerHTML 获取标签中的文本
+    p.innerHTML = "<br>aaaaaaa</br>" 设置标签的HTML文本
         
         
     
