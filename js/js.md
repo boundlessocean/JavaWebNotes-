@@ -1,7 +1,6 @@
 # JS
 ![js](js.png)
-
-
+![dom](dom操作.png)
 ## 组成
     ECMAScript  语法
     bom         浏览器模型
@@ -58,10 +57,10 @@
 ####  7.script标签位置
     放在body后面
     
-#### 8 js中的对象使用
+#### 8. js中的对象使用
     String Array Date Math使用
     
-#### 9 js的全局函数
+#### 9 .js的全局函数
     1.eval(code) 执行代码字符串
     var code = "alert('哈哈哈');"
     eval(code);
@@ -145,7 +144,7 @@
      setTimeout()
      opener 获取打开这个window的对象
         
-## 三 dom 文档对象模型
+## 三、dom 文档对象模型
         
 ####  组成：
     <p id="idName"> 哈哈哈哈 </p>
@@ -213,7 +212,7 @@
         document.write(text.nodeValue);
         
         
-#### 四 innerHTML
+## 四、 innerHTML
     var p = document.getElementById("idName");
     p.innerHTML 获取标签中的文本
     p.innerHTML = "<br>aaaaaaa</br>" 设置标签的HTML文本
