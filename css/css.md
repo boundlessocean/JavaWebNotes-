@@ -33,7 +33,6 @@
      nameA 和 nameB以空格隔开
      <div class="nameA nameB">
 
-
 #### 3.css扩展选择器
     1.关联选择器 标签中的标签 div中的p标签
     div p.p1{
@@ -71,7 +70,6 @@
     width: 13%;
     }
 
-
 #### 6.布局定位（漂浮）
     position
     absolute   从文档流中拖出
@@ -83,8 +81,6 @@
     margin-left: 3%;
     height: 3%;
     }
-
-
 
 #### 7.标签显示模式转换
 
@@ -125,8 +121,27 @@
 
    ​
 
+#### 8. CSS三大特性
+
+> 层叠性
+>
+> 继承性
+>
+> 优先性
 
 
 
+#### 9. 背景
 
+```
+// 1.background-repeat 显示模式
+background-position: center;
+// 2.background-position: x y;  x,y取值Top，left，right，bottom，center。也可以是具体的值，如 20px
+background-repeat: no-repeat;
+// 3.background-attachment: fixed固定 scroll滚动
+background-attachment: fixed;
+// 4.背景连写 background: 颜色 URL 显示模式 attahed 位置 
+// 顺序无强制要求
+background: orangered url(1.png) no-repeat fixed center top;
+```
 
