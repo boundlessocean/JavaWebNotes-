@@ -1,4 +1,4 @@
-# CSS
+#  CSS
 
 [TOC]
 
@@ -52,16 +52,63 @@
     点击之后    :visited
 
 #### 4.盒子模型
-    边框 border:2px solid red;
-    border-top  border-bottom   border-left border-right
-    
-    内边距 padding:20px
-    padding-top padding-bottom  padding-left padding-right
-    
-    外边距 margin:20px
-    margin-top margin-bottom  margin-left margin-right
-    
-    line-height: 与标签height相同时垂直居中;
+```
+1.边框 border:2px solid red;
+border-top  border-bottom   border-left border-right
+
+2.内边距 padding:20px
+padding-top padding-bottom  padding-left padding-right
+
+3.外边距 margin:20px
+margin-top margin-bottom  margin-left margin-right
+
+4.垂直居中
+line-height: 与标签height相同时垂直居中;
+
+5.连写
+padding: 10px //上下左右都是10
+padding: 10px 20px //上下10 左右20 
+padding: 10px 20px 30px //上10 左右20 下30
+
+6.盒子水平居中
+margin: 0 auto;
+
+7.清除标签默认内外边距
+* {
+    padding: 0;
+    margin: 0;
+}
+
+8.两个问题
+ 外边距合并 ：使用margin定义块元素的垂直外边距时，可能会出现外边距的合并，无法避免。相邻的两个标签只取边距最大的值，不会叠加。
+ 嵌套标签垂直外边距合并：两个嵌套关系的标签，如果父标签没有上边距及边框，则父标签的上边距会与子标签的上边距发生合并，合并后的外边距为两者中较大者，即使父标签的上边距为0，也会发生合并。解决方案：
+ 1.为父标签定义1px的上边框或上内边距
+ 2.可以为父标签添加 overflow:hidden
+ 
+9.圆角
+ border-radius: 50%; // 
+ border-radius: 10px 0px; // 上左，下右10px  上右，下左0px
+ 
+10.阴影
+ box-shadow: 水平阴影 垂直阴影 模糊距离 阴影尺寸 阴影颜色 内外阴影;
+11.动画
+ transition: all 0.5s
+ 
+12.清除浮动
+ // 其他浏览器
+  .clearfix:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+  }
+  // ie6
+  .clearfix {
+      /*zoom 1 ie6清除浮动的方式 *ie7以下的版本才能识别*/
+      *zoom: 1; 
+  }
+```
 
 #### 5.布局漂浮
     float   left：后面的div到右边   right：后面的div到左边
@@ -72,17 +119,32 @@
 
 #### 6.布局定位（漂浮）
     position
-    absolute   从文档流中拖出
+    absolute   从文档流中拖出,以当前屏幕为基准点，上下左右对齐,如果父标签有漂浮，则以父元素边界对齐
     relative   不会从文档流中拖出
     
     #aa {
     position: absolute;
-    margin-top:3%;
-    margin-left: 3%;
-    height: 3%;
+    left: 20px;
+    top: 20px;
     }
+    
+    配合：子绝（absolute）父相（relative）
+    
+    优先级
+    同级标签漂浮越靠后的标签优先级越高
+    z-index: 1; 主动修改标签的优先级别，数值越大，优先级越高
 
-#### 7.标签显示模式转换
+#### 7.固定定位
+
+```
+固定屏幕位置不动
+```
+
+
+
+
+
+#### 8.标签显示模式转换
 
 ```
 块砖行内 display:inline
@@ -121,17 +183,17 @@
 
    ​
 
-#### 8. CSS三大特性
+#### 9. CSS三大特性
 
 > 层叠性
 >
-> 继承性
+>  继承性
 >
 > 优先性
 
 
 
-#### 9. 背景
+#### 10. 背景
 
 ```
 // 1.background-repeat 显示模式
@@ -144,4 +206,126 @@ background-attachment: fixed;
 // 顺序无强制要求
 background: orangered url(1.png) no-repeat fixed center top;
 ```
+
+
+
+#### 11. 标签显示与隐藏
+
+```
+display: none; 隐藏后不占位置
+visibility: hidden; 隐藏后占位置
+visibility: visible; 显示标签
+```
+
+
+
+#### 12.overflow
+
+```
+溢出部分的处理
+visible|hidden|scroll|inherit
+visible : 显示
+hidden  : 隐藏
+scroll 	: 滚动显示
+inherit : 继承父类
+
+文字溢出部分：
+clip|ellipsis
+text-overflow: overflow;// 省略号
+white-space: nowrap; // 配合单行显示使用
+```
+
+
+
+#### 13.鼠标样式
+
+```
+default|text|pointer|move
+cursor: pointer; 小手样式
+```
+
+
+
+#### 14.文字对齐
+
+```
+baseline|top|baseline|bottom
+vertical-align: middle;
+```
+
+
+
+#### 15.图标字体
+
+```css
+/* 准备工作
+1.下载字体
+2.font文件夹导入项目
+*/
+
+/* css文件中 */
+ @font-face {
+     font-family: 'icomoon';
+     src:  url('../fonts/icomoon.eot?lmqzz3');
+     src:  url('../fonts/icomoon.eot?lmqzz3#iefix') format('embedded-opentype'),
+     url('../fonts/icomoon.ttf?lmqzz3') format('truetype'),
+     url('../fonts/icomoon.woff?lmqzz3') format('woff'),
+     url('../fonts/icomoon.svg?lmqzz3#icomoon') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+
+[class^="icon-"], [class*=" icon-"] {
+     /* use !important to prevent issues with browser extensions that change fonts */
+     font-family: 'icomoon' !important;
+     speak: none;
+     font-style: normal;
+     font-weight: normal;
+     font-variant: normal;
+     text-transform: none;
+     line-height: 1;
+     /* Better Font Rendering =========== */
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+ }
+
+ .icon-connection:before {
+     content: "\e91b";
+     font-size: 25px;   /* 调整大小 */
+     color: #2288f6;	/* 调整颜色 */
+ }
+```
+
+
+
+```html
+<!-- HTML使用 -->
+<span class="icon-connection"> </span>
+```
+
+
+
+#### 16. CSS Reset 类库，为跨浏览器兼容做准备
+
+normalize.css 很小的css文件，在默认的HTML元素样式上提供了跨浏览器的高度一致
+
+Normalize.css 是一种现代的、为HTML5准备的优质替代方案，现在已经被用于非常多的框架、网站、工具上。
+
+
+
+#### 17.ico图标
+
+```html
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+```
+
+
+
+
+
+
+
+
+
+
 
