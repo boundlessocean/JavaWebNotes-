@@ -321,6 +321,62 @@ Normalize.css 是一种现代的、为HTML5准备的优质替代方案，现在�
 
 
 
+#### 18.伪类选择器
+
+```css
+ li:first-child , li:last-child , li:nth-child(3) {
+     /*background-color: #902fc9;*/
+ }
+
+ li:nth-child(even) { /* 偶数 */
+     /*background-color: #2288f6;*/
+ }
+
+ li:nth-child(odd){ /* 基数 */
+     /*background-color: #c81623;*/
+ }
+
+  li:nth-child(4n){ /* 4倍 */
+      /*background-color: #ff8500;*/
+  }
+
+  li[class^="xm_"] { /* 以 xx 开始 */
+      background-color: aqua;
+  }
+
+  li[class$="url"] { /* 以 xx 结束 */
+      background-color: aqua;
+  }
+
+  li[class*="url"] { /* 包含 xx */
+      background-color: aqua;
+  }
+
+  p::first-letter{ /* 第一个字 */
+      /*background-color: aqua;*/
+      font-size: 20px;
+  }
+
+  p::first-line{/* 第一行 */
+      /*background-color: aqua;*/
+  }
+
+  p::selection{ /* 选中 */
+      background-color: aqua;
+  }
+
+ /* 图标字体常用 */
+  div::before { /* 必须带content 代表在div之前添加content*/
+      content: "before-text";
+      background-color: #ff8500;
+  }
+
+  div::after{ /* 必须带content 代表在div之后添加content*/
+      content: "after-text";
+      background-color: #c81623;
+  }
+```
+
 
 
 
