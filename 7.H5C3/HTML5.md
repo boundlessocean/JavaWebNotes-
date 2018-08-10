@@ -141,5 +141,21 @@ localStorage：
 1、数据存储在本地，统一浏览器可共享数据
 2、数据不会随着页面关闭清除
 
-```
+// H5新增应用缓存 cache manifest
+<html lang="en" manifest="cache.appcache"> <\html>
+    
+cache.appcache 文件内容
+CACHE MANIFEST
+#配置缓存文件清单
+CACHE:
+1.png
 
+#配置每次都需要从服务器获取的文件清单
+NETTWORK:
+2.png
+
+#配置无法获取则使用指定文件替换
+FALLBACK:
+3.png 4.png
+
+```
