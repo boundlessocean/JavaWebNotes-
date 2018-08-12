@@ -52,7 +52,7 @@
     点击之后    :visited
 
 #### 4.盒子模型
-```
+```css
 1.边框 border:2px solid red;
 border-top  border-bottom   border-left border-right
 
@@ -61,7 +61,7 @@ padding-top padding-bottom  padding-left padding-right
 
 3.外边距 margin:20px
 margin-top margin-bottom  margin-left margin-right
-
+box-sizing: border-box; 设置外边距和内边距后对盒子尺寸不影响，但内容区域减少
 4.垂直居中
 line-height: 与标签height相同时垂直居中;
 
@@ -321,11 +321,27 @@ Normalize.css 是一种现代的、为HTML5准备的优质替代方案，现在�
 
 
 
-#### 18.伪类选择器
+#### 18.兄弟伪类选择器
 
 ```css
- li:first-child , li:last-child , li:nth-child(3) {
+.class + li{
+    /* class 绝对相邻的li标签 */
+}
+
+.class * li{
+    /* class 所有相邻的li标签 */
+}
+```
+
+#### 19.子类伪类选择器
+
+```css
+li:first-child , li:last-child , li:nth-child(3) {
      /*background-color: #902fc9;*/
+ }
+
+ li:last-of-type ,li:frist-of-type, li:nth-of-type(3){/* 指定类型 */
+    
  }
 
  li:nth-child(even) { /* 偶数 */
@@ -378,6 +394,15 @@ Normalize.css 是一种现代的、为HTML5准备的优质替代方案，现在�
 ```
 
 
+
+#### 20 锚链接伪类选择器
+
+```css
+/* 当目标元素触发为当前锚链接的目标时调用 */
+h2:target {
+	color: red;
+}
+```
 
 
 
