@@ -103,3 +103,71 @@ transform: skew(90deg);
 transform: translate(-50%,-50%);
 ```
 
+
+
+#### 六、关键帧动画
+
+```css
+div{
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+@keyframes move{
+    0%{/* %为该动画时间比例 */
+        transform: translate(0,0);
+    }
+    30%{
+        transform: translate(300px,300px) rotate(45deg);
+    }
+    100%{
+        transform: translate(300px,600px);
+    }
+}
+<script type="text/javascript">
+    var div = document.querySelector("#div");
+    document.querySelector("#play").onclick = function(){
+        div.style.animationPlayState = "running";
+    }
+    document.querySelector("#pause").onclick = function(){
+        div.style.animationPlayState = "paused";
+    }
+</script>
+```
+
+#### 七、盒子伸缩
+
+```css
+/* flex使用伸缩布局 */
+display: flex;
+
+/*
+内容布局方式
+*flex-start : 从父容器起始位置开始布局，无间距
+*flex-end	: 从父容器结束位置开始布局，无间距
+*center		: 从父容器中间位置开始布局，无间距
+*space-between	: 从起始位置到结束位置，中间间距平分，两头无间距
+*space-around	: 从起始位置到结束位置，两头间距是中间间距的一半
+*/
+justify-content: space-around;
+/*
+wrap换行 , direction方向
+* nowrap 不换行  wrap 换行  wrap-reverse 反转
+* row，row-reverse 行排  column，column-reverse 列排
+*/
+flex-flow: column wrap;
+/* 子元素占用剩余空间的数量 */
+flex-grow: 1;
+/* 缩写 子元素占用剩余空间的数量 可用于宽高自适应*/
+flex:1 
+/* 所有元素的排列方式 */
+align-items: flex-end;
+/* 单个元素的排列方式 */
+align-self: center;
+
+```
+
